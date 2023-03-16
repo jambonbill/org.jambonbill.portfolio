@@ -12,6 +12,7 @@
 	<meta property="og:description" content="Portfolio de Pierre BOQUET, Concepteur & Developpeur d'applications">
 
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/portfolio.css" rel="stylesheet">
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" refer></script>
 	<script type="module" src="js/app.js" defer></script>
@@ -28,31 +29,35 @@
 	</nav>
 
 
-    <div class="container">    
-	    <h3>Concepteur & Developpeur d'applications</h3>
-	</div>
 
 	<div class="container">
-
-		<p>"Depuis l’identification initiale des besoins, jusqu'à la production, le déploiement et la maintenance, j’aime me consacrer à un projet, et le voir se développer au fil du temps"</p>
-    	<hr>
+		<div class="row">
+			
+		<div class="col-9 ">
+			<p class=description>Concepteur & Developpeur d'applications: depuis l’identification initiale des besoins, jusqu'à la production, le déploiement et la maintenance, j’aime me consacrer à un projet, et le voir se développer au fil du temps</p>
+		</div>
+		</div>
+		
+    	
 	</div>
 	
 	<div class="container">
-		<h3>Competences:</h3>
+
 		
 		<strong>Langages :</strong>  PHP7 & 8, JavaScript, Es6, Python, NodeJS, C#<br>
 		<strong>Frameworks & libraries :</strong> Composer, Packagist, Symfony, Npm, React, JQuery, D3.js <br>
 		<strong>Web Services :</strong> API REST, SOAP, Google API’s, AWS <br>
 		<strong>DB :</strong> MySQL, SQLite, PostGres, MongoDB, Redis <br>
 		<strong>Other :</strong> GIT, Docker, Composer, Postfix, Vagrant, Regexp, CRUD, PSR2 <br>
-		<hr>
+		<br>
+		<br>
+		<br>
 	</div>
 
 
 	
 	<div class="container">
-		<h3>Mes projets</h3>
+
 		<div class="row">
 			<?php require_once "cards.php"?>
 		</div>
