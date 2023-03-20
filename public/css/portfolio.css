@@ -3,9 +3,14 @@ div.card{
 	min-height:400px;
 }
 
+div.card-footer{
+	border-top: 0;
+	background-color: #fcfcfc;
+}
+
 div.img{
 	height:150px;
-	background-color: #fff;
+	background-color: #eee;
 	overflow: hidden;
 	position:relative;
 }
@@ -21,6 +26,17 @@ div.img img{
 	max-height:100%;
 }
 
+
+
 p.description{
 	font-size: 1.2rem;
+	text-align: justify;
+}
+
+
+
+
+/* image preview crop */
+div.imglarge img{
+	width:100%;
 }
