@@ -5,12 +5,13 @@ session_start();
 require __DIR__."/../vendor/autoload.php";
 
 $PF=new JAM\PortfolioItems();
-$Parsedown = new \Parsedown();
 
 $PF->fetch();//get api data
 
 $twigloader = new Twig\Loader\FilesystemLoader('./templates');
 $twig = new Twig\Environment($twigloader);
+
+
 
 if (empty($_GET['id'])) {
     
@@ -25,9 +26,11 @@ if (empty($_GET['id'])) {
     
     // card detail
     $item=$PF->find($_GET['id']);//Project data
+    /*
     $item->description=$item->description_short;
-    
+    */
     if ($item->description_long) {
+        $Parsedown = new Parsedown();
         $item->description=$Parsedown->text($item->description_long);
     }
     
