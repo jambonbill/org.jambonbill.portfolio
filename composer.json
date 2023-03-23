@@ -1,9 +1,8 @@
 {
     "require": {
     	"php": ">=7.0.0",
-        "erusev/parsedown": "^1.7",
-        "jambonbill/djang": "^1.1",
-        "twig/twig": "^3.5"
+        "twig/twig": "^3.5",
+        "twig/markdown-extra": "^3.5"
     },
 
     "autoload": {
