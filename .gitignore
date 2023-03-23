@@ -1,5 +1,7 @@
 /node_modules/
 
+test.php
+
 package-lock.json
 
 # Build data
