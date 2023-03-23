@@ -28,7 +28,7 @@ if (empty($_GET['id'])) {
     $item->description=$item->description_short;
     
     if ($item->description_long) {
-        $item->description=$Parsedown($item->description_long);
+        $item->description=$Parsedown->text($item->description_long);
     }
     
 
