@@ -1,0 +1,42 @@
+{% extends "BaseTemplate.html" %}
+{% block title %}Menu de la semaine{% endblock %}
+{% block head %}
+{{ parent() }}
+<style>
+    .important { color: #336699; }
+</style>
+{% endblock %}
+{% block content %}
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">PIERRE BOQUET</a>
+            <a class="navbar-brand" href="download.php">CV</a>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="row">
+            
+        <div class="col-12 col-md-9">
+            <p class=description>Concepteur & Developpeur d'applications: depuis l’identification initiale des besoins, jusqu'à la production, le déploiement et la maintenance, j’aime me consacrer à un projet, et le voir se développer au fil du temps</p>
+        </div>
+        </div>
+        
+        
+    </div>
+    
+    <div class="container">
+
+        
+        <strong>Langages :</strong>  PHP7 & 8, JavaScript, Es6, Python, NodeJS, C#<br>
+        <strong>Frameworks & libraries :</strong> Composer, Packagist, Symfony, Npm, React, JQuery, D3.js <br>
+        <strong>Web Services :</strong> API REST, SOAP, Google API’s, AWS <br>
+        <strong>DB :</strong> MySQL, SQLite, PostGres, MongoDB, Redis <br>
+        <strong>Other :</strong> GIT, Docker, Composer, Postfix, Vagrant, Regexp, CRUD, PSR2 <br>
+        <br>
+        <br>
+        <br>
+    </div>
+{% endblock %}

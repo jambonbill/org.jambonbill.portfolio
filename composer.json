@@ -1,6 +1,14 @@
 {
     "require": {
-        "jambonbill/lteturbo": "^1.5",
-        "erusev/parsedown": "^1.7"
+    	"php": ">=7.0.0",
+        "erusev/parsedown": "^1.7",
+        "jambonbill/djang": "^1.1",
+        "twig/twig": "^3.5"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "JAM": "src/"
+        }
     }
 }
