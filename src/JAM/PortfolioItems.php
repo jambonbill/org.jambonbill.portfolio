@@ -36,17 +36,14 @@ class PortfolioItems
 			throw new Exception(json_last_error_msg(), 1);			
 		}
 
+		$this->items=$o->data;
+		
 		// Save to cache
-    	
+    	// todo
     }
 
     
-    
-    public function saveLast()
-    {
 
-    }
-    
 
     public function fromFile(string $filename)
     {
@@ -69,6 +66,36 @@ class PortfolioItems
 	public function list()
 	{
 		return $this->items;
+	}
+
+	
+	/**
+	 * Find portfolio record by id or permalink
+	 *
+	 * @param string $id
+	 * @return mixed
+	 */
+	public function find(string $id)
+	{
+		if (preg_match("/^[0-9]{1,3}/",$id)) {
+			//plain id
+			foreach ($this->items as $item) {
+				if ($item->id==$id) {
+					return $item;
+				}
+			}
+		}
+
+		if (preg_match("/^[a-z0-9-]{3,}/", $id)) {
+			//permalink
+			foreach ($this->items as $item) {
+				if ($item->permalink==$id) {
+					return $item;
+				}
+			}
+		}
+		
+		return false;
 	}
 
 }
