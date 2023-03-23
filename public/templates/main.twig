@@ -1,0 +1,58 @@
+{% extends "BaseTemplate.twig" %}
+{% block title %}Portfolio{% endblock %}
+{% block head %}
+{{ parent() }}
+<style></style>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-9">
+            <p class=description>Concepteur & Developpeur d'applications: depuis l’identification initiale des besoins,
+                jusqu'à la production, le déploiement et la maintenance, j’aime me consacrer à un projet, et le voir se
+                développer au fil du temps</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <strong>Langages :</strong> PHP7 & 8, JavaScript, NodeJS, Python, C#<br>
+    <strong>Frameworks & libraries :</strong> Composer, Packagist, Symfony, Npm, React, JQuery, D3.js <br>
+    <strong>Web Services :</strong> API REST, SOAP, Google API’s, AWS <br>
+    <strong>DB :</strong> MySQL, SQLite, PostGres, MongoDB, Redis <br>
+    <strong>Other :</strong> GIT, Docker, Composer, Postfix, Vagrant, Regexp, CRUD, PSR2 <br>
+    <p></p>
+</div>
+
+<div class="container">
+    <div class="row">
+
+    {% for item in items %}
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+            <div class="img">
+                <a href="{{ item.permalink }}"><img src="{{ item.url_img }}" alt=""></a>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="text-muted"><i>{{ item.tags }}</i></p>
+                <p class="card-text">{{ item.description_short }}</p>        
+            </div>
+            <div class="card-footer text-muted">
+                {% if item.url %}
+                    <a href="{{ item.url }}"><i class="fa fa-external-link"></i></a>
+                {% endif %}
+                {% if item.url_git %}
+                    <a href="{{ item.url_git }}"><i class="fab fa-github"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

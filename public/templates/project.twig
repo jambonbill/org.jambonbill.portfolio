@@ -1,0 +1,45 @@
+{% extends "BaseTemplate.twig" %}
+{% block title %}Project{% endblock %}
+{% block head %}
+{{ parent() }}
+<style></style>
+{% endblock %}
+{% block content %}
+    
+
+
+<div class="container">
+    
+    <a href="/">projects</a>
+    
+    <div class="row">
+        
+        <div class="col-6">
+            <div class="img">
+                <img src="{{ item.url_img }}" alt="">        
+            </div>
+        </div>
+
+        <div class="col-6">
+            <h2>{{ item.title }}</h2>
+            <i class="text-muted">{{ item.tags }}</i>
+            <p>{{ item.description }}</p>
+
+            <a href="{{item.url}}">{{item.url}}</a>
+            <a href="{{item.url_git}}">{{item.url_git}}</a>
+        </div>
+        
+    </div>
+
+</div>
+
+
+<div class="container">
+    <hr>
+    <pre>{{ debug }}</pre>
+</div>
+
+
+
+{% endblock %}
+
