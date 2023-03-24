@@ -23,7 +23,7 @@
         <div class="col-6">
             <h2>{{ item.title }}</h2>
             <i class="text-muted">{{ item.tags }}</i>
-            <p>{{ item.description }}</p>
+            <p>{{ item.description|raw }}</p>
 
             <a href="{{item.url}}">{{item.url}}</a>
             <a href="{{item.url_git}}">{{item.url_git}}</a>
@@ -34,10 +34,6 @@
 </div>
 
 
-<div class="container">
-    <hr>
-    <pre>{{ debug }}</pre>
-</div>
 
 
 
