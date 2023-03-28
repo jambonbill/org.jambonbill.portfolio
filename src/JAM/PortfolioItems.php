@@ -98,4 +98,14 @@ class PortfolioItems
 		return false;
 	}
 
+	public function next()
+	{
+		return $this->items[0];
+	}
+
+	public function prev()
+	{
+		return $this->items[1];
+	}
+
 }
