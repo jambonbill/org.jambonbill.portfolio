@@ -40,6 +40,8 @@ if (empty($_GET['id'])) {
     echo $template->render([
         'GET'=>print_r($_GET,true),
         'item'=>$item,
+        'next'=>$PF->next(),
+        'prev'=>$PF->prev(),
         'debug'=>print_r($item,true)
     ]);    
 
