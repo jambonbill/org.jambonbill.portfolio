@@ -1,9 +1,19 @@
 {% extends "BaseTemplate.twig" %}
-{% block title %}Project{% endblock %}
+{% block title %}{{ item.title }} - Pierre BOQUET{% endblock %}
 {% block head %}
 {{ parent() }}
 <style></style>
 {% endblock %}
+
+{% block opengraph %}
+<meta property="og:site_name" content="Pierre BOQUET Portfolio">
+<meta property="og:url" content="https://portfolio.jambonbill.org/{{ item.permalink }}"> 
+<meta property="og:title" content="{{ item.title }}">
+<meta property="og:type" content="article">
+<meta property="og:image" content="{{ item.url_img }}">
+<meta property="og:description" content="{{ item.description_short }}">
+{% endblock %}
+
 {% block content %}
     
 <div class="container">
@@ -34,8 +44,8 @@
 
         <div class="col-12">
         <hr>
-        <a href=#><i class="fa fa-arrow-left"></i> Previous project</a>
-        <a href=# class="float-end">Next project <i class="fa fa-arrow-right"></i></a>
+        <a href="{{next.permalink}}" title="{{next.description_short}}"><i class="fa fa-arrow-left"></i> {{next.title}}</a>
+        <a href="{{prev.permalink}}" title="{{prev.description_short}}" class="float-end">{{prev.title}} <i class="fa fa-arrow-right"></i></a>
         </div>
         
     </div>
