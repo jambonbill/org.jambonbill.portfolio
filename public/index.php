@@ -25,10 +25,17 @@ if (empty($_GET['id'])) {
 } else {
     
     // card detail
-    $item=$PF->find($_GET['id']);//Project data
+    $key=$PF->find($_GET['id']);
+    $rels=$PF->getRelations($key);
+    //print_r($rels);exit;
+    $item=$PF->get($key);//Project data
+    
+    //$items=$PF->random();//Random Project data
+    
     /*
     $item->description=$item->description_short;
     */
+    
     if ($item->description_long) {
         $Parsedown = new Parsedown();
         $item->description=$Parsedown->text($item->description_long);
@@ -40,8 +47,9 @@ if (empty($_GET['id'])) {
     echo $template->render([
         'GET'=>print_r($_GET,true),
         'item'=>$item,
-        'next'=>$PF->next(),
-        'prev'=>$PF->prev(),
+        'items'=>$PF->random(),
+        'next'=>$PF->get($rels['next']),
+        'prev'=>$PF->get($rels['prev']),
         'debug'=>print_r($item,true)
     ]);    
 

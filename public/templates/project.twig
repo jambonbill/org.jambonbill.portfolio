@@ -27,8 +27,8 @@
     <div class="row">
         
         <div class="col-12 col-md-6">
-            <div class="img">
-                <img src="{{ item.url_img }}" alt="">        
+            <div class="imgproject">
+                <img src="{{ item.url_img|default('img/thumbnail-600x350.png') }}" alt="{{item.title}}" title="{{item.title}}">        
             </div>
         </div>
 
@@ -41,13 +41,39 @@
             <a href="{{item.url_git}}">{{item.url_git}}</a>
         </div>
 
-
-        <div class="col-12">
-        <hr>
+        <div class="col-12" style="padding:2rem;">
         <a href="{{next.permalink}}" title="{{next.description_short}}"><i class="fa fa-arrow-left"></i> {{next.title}}</a>
         <a href="{{prev.permalink}}" title="{{prev.description_short}}" class="float-end">{{prev.title}} <i class="fa fa-arrow-right"></i></a>
         </div>
         
+    </div>
+
+
+    <div class="row">
+        
+        <!-- cards -->
+        {% for item in items %}
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
+                <div class="img">
+                    <a href="{{ item.permalink }}" alt="{{ item.title }}"><img src="{{ item.url_img|default('img/thumbnail-600x350.png') }}" alt="{{ item.title }}"></a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.title }}</h5>
+                    <p class="text-muted"><i>{{ item.tags }}</i></p>
+                    <p class="card-text">{{ item.description_short }}</p>        
+                </div>
+                <div class="card-footer text-muted">
+                    {% if item.url %}
+                        <a href="{{ item.url }}"><i class="fa fa-external-link"></i></a>
+                    {% endif %}
+                    {% if item.url_git %}
+                        <a href="{{ item.url_git }}"><i class="fab fa-github"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 
 </div>

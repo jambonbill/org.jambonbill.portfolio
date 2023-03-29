@@ -29,7 +29,10 @@ div.img img{
 	object-fit:cover;
 }
 
-
+div.imgproject img{
+	width:100%;
+	margin-bottom: 1rem;
+}
 
 p.description{
 	font-size: 1.2rem;

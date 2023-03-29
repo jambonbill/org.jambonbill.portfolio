@@ -28,7 +28,7 @@
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card">
             <div class="img">
-                <a href="{{ item.permalink }}"><img src="{{ item.url_img }}" alt=""></a>
+                <a href="{{ item.permalink }}"><img src="{{ item.url_img|default('img/thumbnail-600x350.png') }}" alt=""></a>
             </div>
             <div class="card-body">
                 <h5 class="card-title">{{ item.title }}</h5>

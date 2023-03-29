@@ -62,15 +62,55 @@ class PortfolioItems
     }
 
 
+	/**
+	 * Return the item
+	 *
+	 * @param integer $key
+	 * @return void
+	 */
+	public function get(int $key)
+	{
+		if (isset($this->items[$key])) {			
+			//$this->items[$key]->
+			return $this->items[$key];
+		}
+		return false;		
+	}
+	
+	public function getRelations(int $key)
+	{	
+		$next=$key+1;
+		$prev=$key-1;
+		return ['next'=>$next,'prev'=>$prev];
+	}
 
-	public function list()
+	public function sort()
+	{
+		//sort items	
+	}
+
+	public function list(int $limit=0)
 	{
 		return $this->items;
 	}
 
+
+	/**
+	 * Return 4 random items
+	 *
+	 * @return void
+	 */
+	public function random()
+	{
+		//shuffle($this->items);
+		$copy=$this->items;
+		shuffle($copy);
+		return array_slice($copy, 0,4);
+	}
+
 	
 	/**
-	 * Find portfolio record by id or permalink
+	 * Find portfolio record `number` by id or permalink
 	 *
 	 * @param string $id
 	 * @return mixed
@@ -79,18 +119,18 @@ class PortfolioItems
 	{
 		if (preg_match("/^[0-9]{1,3}/",$id)) {
 			//plain id
-			foreach ($this->items as $item) {
+			foreach ($this->items as $k=>$item) {
 				if ($item->id==$id) {
-					return $item;
+					return $k;
 				}
 			}
 		}
 
 		if (preg_match("/^[a-z0-9-]{3,}/", $id)) {
 			//permalink
-			foreach ($this->items as $item) {
+			foreach ($this->items as $k=>$item) {
 				if ($item->permalink==$id) {
-					return $item;
+					return $k;
 				}
 			}
 		}
@@ -98,14 +138,16 @@ class PortfolioItems
 		return false;
 	}
 
-	public function next()
-	{
-		return $this->items[0];
-	}
 
-	public function prev()
+		
+	/**
+	 * Return related items
+	 *
+	 * @return void
+	 */
+	public function related()
 	{
-		return $this->items[1];
+		//
 	}
 
 }
