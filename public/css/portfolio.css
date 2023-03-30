@@ -1,6 +1,18 @@
+h5>a{
+	text-decoration: none;
+}
+
+.smaller{
+	font-size: .9rem;
+}
+
+div.competences{
+	line-height:2rem;
+	margin-bottom: 2rem;
+}
 
 div.card{
-	min-height:400px;
+	min-height:350px;
 	margin-bottom: 1rem;
 }
 
