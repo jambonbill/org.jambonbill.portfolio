@@ -1,7 +1,8 @@
 <?php
 //dowload resume + Log
 
-$file_url = '/docs/cv-pierre-boquet.pdf';
+
+$file_url = '/cv/CV-Pierre-BOQUET.court.pdf';
 
 if (!is_file($file_url)) {
 	exit("file not found");
