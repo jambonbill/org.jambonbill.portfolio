@@ -19,12 +19,6 @@
 <div class="container">
     
     <div class="row">
-        <div class="col-12">
-            <a href="/">Home</a>
-        </div>
-    </div>
-    
-    <div class="row">
         
         <div class="col-12 col-md-6">
             <div class="imgproject">
@@ -52,7 +46,9 @@
         </div>
 
         <div class="col-12" style="padding:2rem;">
+        {% if prev.permalink %}
         <a href="{{prev.permalink}}" title="{{pev.description_short}}"><i class="fa fa-arrow-left"></i> {{prev.title}}</a>
+        {% endif %}
         <a href="{{next.permalink}}" title="{{next.description_short}}" class="float-end">{{next.title}} <i class="fa fa-arrow-right"></i></a>
         </div>
         
