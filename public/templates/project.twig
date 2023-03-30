@@ -28,7 +28,9 @@
         
         <div class="col-12 col-md-6">
             <div class="imgproject">
+                <a href="{{item.url}}" alt="{{item.title}}">
                 <img src="{{ item.url_img|default('img/thumbnail-600x350.png') }}" alt="{{item.title}}" title="{{item.title}}">        
+                </a>
             </div>
         </div>
 
@@ -36,14 +38,22 @@
             <h2>{{ item.title }}</h2>
             <i class="text-muted">{{ item.tags }}</i>
             <p>{{ item.description|raw }}</p>
-
-            <a href="{{item.url}}">{{item.url}}</a>
-            <a href="{{item.url_git}}">{{item.url_git}}</a>
+            <hr>
+            {% if item.url %}
+            <p>
+            <a href="{{item.url}}" class="btn btn-primary"><i class="fa fa-external-link"></i> {{item.url}}</a>
+            </p>
+            {% endif %}
+            {% if item.url_git %}
+            <p>
+            <a href="{{item.url_git}}" class="btn btn-secondary"><i class="fab fa-github"></i> {{item.url_git}}</a>
+            </p>
+            {% endif %}
         </div>
 
         <div class="col-12" style="padding:2rem;">
-        <a href="{{next.permalink}}" title="{{next.description_short}}"><i class="fa fa-arrow-left"></i> {{next.title}}</a>
-        <a href="{{prev.permalink}}" title="{{prev.description_short}}" class="float-end">{{prev.title}} <i class="fa fa-arrow-right"></i></a>
+        <a href="{{prev.permalink}}" title="{{pev.description_short}}"><i class="fa fa-arrow-left"></i> {{prev.title}}</a>
+        <a href="{{next.permalink}}" title="{{next.description_short}}" class="float-end">{{next.title}} <i class="fa fa-arrow-right"></i></a>
         </div>
         
     </div>
@@ -54,23 +64,17 @@
         <!-- cards -->
         {% for item in items %}
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
+            <div class="card d-none d-lg-block">
                 <div class="img">
                     <a href="{{ item.permalink }}" alt="{{ item.title }}"><img src="{{ item.url_img|default('img/thumbnail-600x350.png') }}" alt="{{ item.title }}"></a>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ item.title }}</h5>
-                    <p class="text-muted"><i>{{ item.tags }}</i></p>
-                    <p class="card-text">{{ item.description_short }}</p>        
+                    
+                    <p class="card-text smaller">{{ item.description_short }}</p>        
+                    <p class="text-muted smaller"><i>{{ item.tags }}</i></p>
                 </div>
-                <div class="card-footer text-muted">
-                    {% if item.url %}
-                        <a href="{{ item.url }}"><i class="fa fa-external-link"></i></a>
-                    {% endif %}
-                    {% if item.url_git %}
-                        <a href="{{ item.url_git }}"><i class="fab fa-github"></i></a>
-                    {% endif %}
-                </div>
+                
             </div>
         </div>
         {% endfor %}
