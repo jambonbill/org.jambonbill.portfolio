@@ -2,12 +2,15 @@ h5>a{
 	text-decoration: none;
 }
 
+.navbar-brand a:hover{
+	text-decoration: underline;
+}
+
 .smaller{
 	font-size: .9rem;
 }
 
 div.competences{
-	line-height:2rem;
 	margin-bottom: 2rem;
 }
 
@@ -58,3 +61,10 @@ p.description{
 div.imglarge img{
 	width:100%;
 }
+
+
+div.bottom{
+	margin-bottom: 2rem;
+}
+
+
