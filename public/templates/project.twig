@@ -25,6 +25,10 @@
                 <a href="{{item.url}}" alt="{{item.title}}">
                 <img src="{{ item.url_img|default('img/thumbnail-600x350.png') }}" alt="{{item.title}}" title="{{item.title}}">        
                 </a>
+                <!-- youtube video -->
+                {% if item.url_youtube %}
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{item.url_youtube}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                {% endif %}
             </div>
         </div>
 
@@ -32,6 +36,9 @@
             <h2>{{ item.title }}</h2>
             <i class="text-muted">{{ item.tags }}</i>
             <p>{{ item.description|raw }}</p>
+
+            
+
             <hr>
             {% if item.url %}
             <p>
