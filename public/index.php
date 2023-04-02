@@ -2,6 +2,16 @@
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 
+//logger
+//echo '<pre>';print_r($_SERVER);exit;
+$row=date('c')."\t";
+$row.=$_SERVER['REMOTE_ADDR']."\t";
+$row.=$_SERVER['HTTP_USER_AGENT']."\t";
+$row.=$_SERVER['REQUEST_URI']."\t";
+$row.=PHP_EOL;
+@error_log($row,3,"../logs/access.log");
+
+
 require __DIR__."/../vendor/autoload.php";
 
 $PF=new JAM\PortfolioItems();
@@ -32,8 +42,12 @@ if (empty($_GET['id'])) {
     
     //$items=$PF->random();//Random Project data
     
+    //try replace thumbnails with animation
     /*
-    $item->description=$item->description_short;
+    $banemame=basename($item->img_url);
+    if (is_file()) {
+
+    }
     */
     
     if ($item->description_long) {
