@@ -9,6 +9,9 @@ $row.=$_SERVER['REMOTE_ADDR']."\t";
 $row.=$_SERVER['HTTP_USER_AGENT']."\t";
 $row.=$_SERVER['REQUEST_URI']."\t";
 $row.=PHP_EOL;
+
+//TODO skip favicon
+
 @error_log($row,3,"../logs/access.log");
 
 
