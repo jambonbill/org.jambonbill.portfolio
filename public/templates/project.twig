@@ -6,6 +6,13 @@
 {% endblock %}
 
 {% block opengraph %}
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@jambonbill" />
+<meta name="twitter:title" content="{{ item.title }}" />
+<meta name="twitter:description" content="{{ item.description_short }}" />
+<meta name="twitter:image" content="{{ item.url_img }}" />
+
 <meta property="og:site_name" content="Pierre BOQUET Portfolio">
 <meta property="og:url" content="https://portfolio.jambonbill.org/{{ item.permalink }}"> 
 <meta property="og:title" content="{{ item.title }}">
