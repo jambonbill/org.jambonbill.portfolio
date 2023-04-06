@@ -16,6 +16,7 @@ $row.=PHP_EOL;
 
 
 require __DIR__."/../vendor/autoload.php";
+require_once __DIR__."/skills.php";
 
 $PF=new JAM\PortfolioItems();
 
@@ -29,10 +30,12 @@ $twig = new Twig\Environment($twigloader);
 if (empty($_GET['id'])) {
     
     // main
+    
     $items=$PF->list();
     $template=$twig->load('main.twig');
     echo $template->render([
-        'items'=>$items
+        'skills'=>implode(", ", $skills),
+        'items'=>$items        
     ]);
 
 } else {
