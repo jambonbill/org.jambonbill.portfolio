@@ -49,12 +49,12 @@
             <hr>
             {% if item.url %}
             <p>
-            <a href="{{item.url}}" class="btn btn-primary"><i class="fa fa-external-link"></i> {{item.url}}</a>
+            <a href="{{item.url}}" class="btn btn-primary" target=_blank><i class="fa fa-external-link"></i> {{item.url}}</a>
             </p>
             {% endif %}
             {% if item.url_git %}
             <p>
-            <a href="{{item.url_git}}" class="btn btn-secondary"><i class="fab fa-github"></i> {{item.url_git}}</a>
+            <a href="{{item.url_git}}" class="btn btn-secondary" target=_blank><i class="fab fa-github"></i> {{item.url_git}}</a>
             </p>
             {% endif %}
         </div>
