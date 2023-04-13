@@ -33,29 +33,39 @@
 
 <body>
 
-<section id="content">
-
-	<nav class="navbar navbar-expand-lg">
+<header class="header">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-black">
 		<div class="container">			
 			<h1>
-			<a class="navbar-brand" href="/"><strong>PIERRE BOQUET</strong></a>
+			<a class="navbar-brand" href="/">Pierre Boquet</a>
 			</h1>
 			<a class="navbar-brand" href="download.php" title="Télécharger mon CV"><i class="fa fa-download"></i> CV</a>
-			
 		</div>
 	</nav>
+</header>
+
+<section id="content">	
 
 	{% block content %}{% endblock %}
 
 </section>
 
 
-<div class="container bottom">
-	<hr>
-	<a class="navbar-brand" href="download.php">CONTACT</a>
+<footer class="footer">
+
+	<div class="container bottom">
+	
+	<div class="col-12 col-md-8 skills">
+	JavaScript/ES6, PHP7 & 8, NodeJS, Python, C#, Composer, Packagist, Symfony, Npm, React, JQuery, D3.js, API REST, SOAP, Google API’s, AWS, MariaDB, MySQL, SQLite, PostGres, MongoDB, Redis, GIT, Docker, Composer, Regexp, CRUD, PSR2
+	</div>
+	
+	
+	<!--<a class="navbar-brand" href="download.php">CONTACT</a>-->
 	<p><i class="far fa-envelope"></i> pierre.boquet at petscii.org</p>
 
-</div>
+	</div>
+
+</footer>
 
 </body>
 </html>

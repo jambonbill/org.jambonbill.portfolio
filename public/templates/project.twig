@@ -40,11 +40,11 @@
         </div>
 
         <div class="col-12 col-md-6">
-            <h2>{{ item.title }}</h2>
-            <i class="text-muted">{{ item.tags }}</i>
+            <h2 class="project-title">{{ item.title }}</h2>
+            
             <p>{{ item.description|raw }}</p>
 
-            
+            <i class="text-muted">{{ item.tags }}</i>
 
             <hr>
             {% if item.url %}
