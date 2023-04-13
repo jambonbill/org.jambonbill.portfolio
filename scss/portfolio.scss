@@ -1,9 +1,13 @@
 //jambonbill portfolio.scss
 
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+//$font-prefix: './custom/path/to/font/files';/
+//@import '../node_modules/@ibm/plex/scss/ibm-plex.scss';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
 body{
-	font-family: 'Inter', sans-serif;
+	//font-family: 'Inter', sans-serif;
+	font-family: 'IBM Plex Mono', monospace;
 	background-color: #F5F5F5;
 }
