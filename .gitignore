@@ -1,7 +1,7 @@
 /node_modules/
 
 test.php
-
+logs/access.log
 package-lock.json
 
 # Build data
