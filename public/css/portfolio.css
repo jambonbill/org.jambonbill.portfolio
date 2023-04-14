@@ -41,6 +41,10 @@ div.card{
 	margin-bottom: 2rem;
 }
 
+p.card-text{
+	font-size: 1rem;
+}
+
 div.card-footer{
 	border-top: 0;
 	background-color: #fcfcfc;
@@ -66,6 +70,11 @@ div.img img{
 	object-fit:cover;
 }
 
+div.card-arrow{
+	position: absolute;
+	bottom: 1rem;
+    right: 1rem;
+}
 
 h2.project-title{
 	margin-top:3rem;
