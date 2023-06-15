@@ -10,9 +10,11 @@ $skills[]='C#';
 $skills[]='Composer';
 $skills[]='Packagist'; 
 $skills[]='Symfony';
+$skills[]='Laravel';
 $skills[]='Npm';
 $skills[]='React';
-$skills[]='JQuery'; 
+//$skills[]='Vue.js';//todo
+$skills[]='JQuery'; //old
 $skills[]='D3.js';
 $skills[]='API REST';
 $skills[]='SOAP';
@@ -31,7 +33,7 @@ $skills[]='Composer';
 //$skills[]='Vagrant';
 $skills[]='Regexp';
 $skills[]='CRUD';
-$skills[]='PSR2';
+//$skills[]='PSR2';//obsolete
 
 //sort($skills);
 
