@@ -1,19 +1,13 @@
-import { fetchJson } from "./api.js";
-import { createElement } from "./dom.js";
+//import { fetchJson } from "./api.js";
+//import { createElement } from "./dom.js";
 //import { TodoList } from "./TodoList.js";
 
-let url='https://api.jambonbill.org/portfolio/';
-url='json/data.json';//dev/debug
+//let url='https://api.jambonbill.org/portfolio/';
 
-
+/*
 try{
     const items=await fetchJson(url,{mode: "no-cors"});
-    console.log(items);
-    
-    //const table=new TableList(todos);
-    //table.appendTo(document.getElementById('pfitems'));
-    
-    
+    console.log(items);  
 } catch(e){
      //const div = document.createElement('div')
      const alertElement=createElement('div',{
@@ -26,17 +20,4 @@ try{
      document.body.prepend(alertElement);    
      console.error(e);
 }
-
-
-/*
-const response = await fetch(url, {
-  headers:{
-    'Accept': 'application/json',
-    'Mode':'no-cors'
-  }
-}).then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-  });
-
-  */
+*/
