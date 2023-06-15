@@ -71,7 +71,6 @@ class PortfolioItems
 	public function get(int $key)
 	{
 		if (isset($this->items[$key])) {			
-			//$this->items[$key]->
 			return $this->items[$key];
 		}
 		return false;		
@@ -148,6 +147,28 @@ class PortfolioItems
 	public function related()
 	{
 		//
+	}
+
+
+	/**
+	 * Return the list of tags and the usage count
+	 * @return [type] [description]
+	 */
+	public function tags()
+	{
+		$stats=[];
+
+		foreach ($this->items as $k=>$item) {
+			$tags = explode(",", $item->tags);
+			foreach ($tags as $tag) {
+				$tag=trim($tag);
+				if (empty($stats[$tag])) {
+					$stats[$tag]=0;
+				}
+				$stats[$tag]++;	
+			}			
+		}
+		return $stats;
 	}
 
 }
