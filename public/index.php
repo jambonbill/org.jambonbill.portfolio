@@ -8,18 +8,14 @@ require_once __DIR__."/logger.php";//access log
 require_once __DIR__."/skills.php";
 
 $PF=new JAM\PortfolioItems();
-
 $PF->fetch();//get api data
 
 $twigloader = new Twig\Loader\FilesystemLoader('./templates');
 $twig = new Twig\Environment($twigloader);
 
 
-
-if (empty($_GET['id'])) {
-    
-    // main
-    
+if (empty($_GET['id'])) {    
+    // main    
     $items=$PF->list();
     $template=$twig->load('main.twig');
     echo $template->render([
@@ -34,16 +30,10 @@ if (empty($_GET['id'])) {
     $rels=$PF->getRelations($key);
     //print_r($rels);exit;
     $item=$PF->get($key);//Project data
-    
-    //$items=$PF->random();//Random Project data
-    
-    //try replace thumbnails with animation
-    /*
-    $banemame=basename($item->img_url);
-    if (is_file()) {
 
-    }
-    */
+    $item->url_short=preg_replace("/^https?:\/\//","",$item->url);//shorten url
+
+    //echo '<pre>';var_dump($item);exit;
     
     if ($item->description_long) {
         $Parsedown = new Parsedown();
