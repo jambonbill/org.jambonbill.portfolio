@@ -20,4 +20,4 @@ jobs:
 
       - name: Deploy via SSH
         run: |
-          ssh admin@92.243.16.207 'cd /var/www/org.jambonbill.portfolio && git pull origin main'
+          ssh -o StrictHostKeyChecking=no admin@92.243.16.207 'cd /var/www/org.jambonbill.portfolio && git pull origin main'
