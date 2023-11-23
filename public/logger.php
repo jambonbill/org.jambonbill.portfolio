@@ -1,5 +1,5 @@
 <?php
-// logger
+// crappy logger
 
 //echo '<pre>';print_r($_SERVER);exit;
 
@@ -18,12 +18,12 @@ $skip=false;
 // Filter IP //
 switch($_SERVER['REMOTE_ADDR'])
 {    
-    case '86.219.65.59':
+    case '86.219.65.59'://montauvet.net
         $skip=true;break;
 }
 
 
 if (!$skip) {
-    @error_log($row,3,"../logs/access.log");
+    @error_log($row,3,__DIR__."/../logs/access.log");
 }
 
